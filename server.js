@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 
-//  import the authController
+// Controllers
 const authController = require("./controllers/auth.js");
 
 // Set the port from environment variable or default to 3000
@@ -26,9 +26,10 @@ app.use(methodOverride("_method"));
 // Morgan for logging HTTP requests
 app.use(morgan('dev'));
 
+app.use("/auth", authController);
+
+
 // Routes
-
-
 
 // Public Routes
 // log-in and regesteration route
@@ -39,7 +40,6 @@ app.get("/", async (req, res) => {
 
 
 // Protected Routes
-
 
 
 
