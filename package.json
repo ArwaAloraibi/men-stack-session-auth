@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/ArwaAloraibi/men-stack-session-auth/issues"
   },
-  "homepage": "https://github.com/ArwaAloraibi/men-stack-session-auth#readme"
+  "homepage": "https://github.com/ArwaAloraibi/men-stack-session-auth#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.18.0",
+    "morgan": "^1.10.1"
+  }
 }
