@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
+    <title>Sign in</title>
   </head>
   <body>
-
-   <a href="/auth/sign-in">sign in</a>
-
-    <h1>Create a new account!</h1>
+     <a href="/auth/sign-up">sign up</a>.
+    <h1>sign in</h1>
 
 
-     <form action="/auth/sign-up" method="POST">
+     <form action="/auth/sign-in" method="POST">
       <label for="username">Username:</label>
       <input type="text" name="username" id="username" />
 
@@ -20,11 +18,7 @@
       <label for="password">Password:</label>
       <input type="password" name="password" id="password" />
 
-
-      <label for="confirmPassword">Confirm Password:</label>
-      <input type="password" name="confirmPassword" id="confirmPassword" />
-      
-      <button type="submit">Sign up</button>
+      <button type="submit">Sign in</button>
     </form>
   </body>
 </html>

@@ -2,6 +2,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
 const app = express();
+const session = require('express-session');
 
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
@@ -26,7 +27,23 @@ app.use(methodOverride("_method"));
 // Morgan for logging HTTP requests
 app.use(morgan('dev'));
 
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 app.use("/auth", authController);
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 
 // Routes
@@ -34,9 +51,12 @@ app.use("/auth", authController);
 // Public Routes
 // log-in and regesteration route
 // GET /
-app.get("/", async (req, res) => {
-  res.render("index.ejs");
+app.get("/", (req, res) => {
+  res.render("index.ejs", {
+    user: req.session.user,
+  });
 });
+
 
 
 // Protected Routes
